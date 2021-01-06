@@ -16,7 +16,7 @@ function Home() {
 
   const [messageText, setMessageText] = React.useState("");
 
-  const [socket, setSocket] = React.useState(null);
+  const [socket, setSocket] = React.useState(false);
 
   const onUsernameChange = (event : any) => {
     setUsername(event.target.value);
@@ -29,7 +29,7 @@ function Home() {
   const sendMessage = (text : string) => {
 
     //alert(text)
-    if(socket != null)
+    if(socket)
       socket.emit('message', { token, text, platform:'Web' }) //send the jwt
 
   }
