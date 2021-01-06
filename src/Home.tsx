@@ -29,7 +29,7 @@ function Home() {
   const sendMessage = (text : string) => {
 
     //alert(text)
-    if(socket)
+    if(socket != null)
       socket.emit('message', { token, text, platform:'Web' }) //send the jwt
 
   }
